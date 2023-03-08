@@ -1,0 +1,704 @@
+* {
+  margin: 0;
+}
+label {
+  padding: 0em 0em 0em 0.4em;
+}
+input {
+  height: 2em;
+  outline: none;
+  padding: 0.4em;
+  border: none;
+}
+select {
+  height: 2.75em;
+  outline: none;
+  padding: 0.4em;
+  border: none;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: linear-gradient(
+    325deg,
+    white,
+    rgb(163, 206, 241),
+    #003566 65%
+  );
+}
+.appCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 25em;
+  height: 100%;
+  overflow: auto;
+}
+.appCont::-webkit-scrollbar {
+  display: none;
+}
+.appName {
+  display: flex;
+  width: 100%;
+  padding: 1em 0em 1em 0em;
+  justify-content: center;
+  background-color: #003566;
+  color: #e0e1dd;
+  z-index: 1;
+  position: fixed;
+}
+
+#addAccountPage,
+#profilePage,
+#settingsPage,
+#accUpdatePage,
+#logForm,
+#regForm {
+  width: 90%;
+  display: none;
+  margin: 6.5em 0em 0em 0em;
+  position: absolute;
+}
+
+/* #LOGFORM */
+.logForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 10px 15px -10px #003566;
+  border-radius: 15px;
+  background-image: linear-gradient(45deg, #f9f9f9, white);
+}
+.loginName {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2.5em 0em 3.5em 0em;
+}
+.logFormMainInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25em 0em 1.25em 0em;
+}
+.loginInput {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0em 0.5em 0em;
+}
+#loginFormInputMain {
+  box-shadow: 1px 2px 5px 0px darkgrey;
+  border-radius: 6px;
+}
+.loginBtnCont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 1.25em 0em 0.75em 0em;
+}
+#loginButton {
+  width: 50%;
+  height: 3em;
+  border-style: solid;
+  border-width: 3.5px;
+  border-color: #f2cb0a;
+  background: white;
+  border-radius: 2em;
+  background-color: #ffeb85;
+}
+.logToReg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* #REGFORM */
+.regFormMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.regFormPart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 10px 15px -10px #003566;
+  margin: 0em 0em 1.5em 0em;
+  border-radius: 15px;
+  background-image: linear-gradient(45deg, #f9f9f9, white);
+}
+.regFormPartName {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0em 1em 0em;
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: darkgray;
+}
+.regFormMainCont {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em 0em 1.25em 0em;
+}
+.regFormInput {
+  display: flex;
+  margin: 0.5em 0em 0.5em 0em;
+  flex-direction: column;
+}
+#regFormInputMain {
+  border-radius: 6px;
+  box-shadow: 1px 2px 5px 0px darkgrey;
+}
+.regConfirmCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dateSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dateSection div {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.registerBtn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.regButtonCont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 1.25em 0em 0.75em 0em;
+}
+#regBtn {
+  width: 50%;
+  height: 3em;
+  border-style: solid;
+  border-width: 3.5px;
+  border-color: #f2cb0a;
+  background: white;
+  border-radius: 2em;
+  background-color: #ffeb85;
+}
+
+/* #PROFILECARD */
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.profileCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 2.5em 0em 2.5em 0em;
+  overflow: auto;
+  box-shadow: 0px 1px 5px 1px darkgrey;
+  border-radius: 15px;
+  background-image: linear-gradient(-40deg, white, #f9f9f9 150%);
+}
+.profileCard p {
+  margin: 0.6em 0em 0.6em 0em;
+}
+.image {
+  aspect-ratio: 1/1;
+  width: 10em;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 9px;
+  border-color: white;
+  margin: 0em 0em 2em 0em;
+  box-shadow: 0px 1px 9px -2px black;
+  background-color: steelblue;
+}
+.grabAccountBtn {
+  width: 70%;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: auto;
+}
+#grabAccountButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.5em;
+  border-radius: 3em;
+  border-style: solid;
+  border-color: #f2de00;
+  border-width: 4px;
+  background-color: #fff799;
+}
+.accountsCont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  opacity: 0;
+  justify-content: center;
+}
+.accInfo {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 0px #19212b;
+  overflow: hidden;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.accInfoMainPart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0em 0.5em 0em;
+}
+.accountName {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  box-sizing: border-box;
+  background-image: linear-gradient(-45deg, #003566, #77b5da);
+  color: beige;
+}
+.accountNameCont {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+.showMoreBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  opacity: 0;
+}
+.accountNameCont button,
+.showMoreBtn button {
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  border-radius: 15px;
+  border: none;
+}
+.accountNameCont svg,
+.showMoreBtn svg {
+  width: 15px;
+}
+.accountInfoMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f6fff8;
+}
+.accInfoMain {
+  padding: 0em 0.7em 0em 0.7em;
+}
+.accInfoA,
+.accInfoB {
+  margin: 0.6em 0em 0.4em 0em;
+}
+.accInfoA {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.accDeleteBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: #6096ba;
+}
+.accDeleteBtn button {
+  margin: 0.6em 0em 0.6em 0em;
+  width: 45%;
+  border-radius: 2em;
+  border: none;
+  background-color: #ec6a6c;
+}
+
+/* #ADDINGACCOUNTPAGE */
+.addAccForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.addAccFormPart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 3px 10px -3px #003566;
+  margin: 0em 0em 1.5em 0em;
+  border-radius: 15px;
+  background-image: linear-gradient(45deg, #f9f9f9, white);
+}
+#addAccInputMain {
+  border-radius: 6px;
+  box-shadow: 1px 2px 5px 0px darkgrey;
+}
+.addAccName {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 1em 0em 1em 0em;
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: darkgray;
+}
+.twoStepCheck,
+.secQuesCheck {
+  width: 99%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin: 0.35em 0em 0.35em 0em;
+}
+.twoStepCheck input,
+.secQuesCheck input {
+  width: 1.25em;
+  height: 1.25em;
+}
+.addAccFormMain {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em 0em 1.25em 0em;
+  align-items: center;
+}
+.addAccSecForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0em 0.5em 0em;
+}
+.addAccInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0em 0.5em 0em;
+}
+.addAccConfirm {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: 0.5em 0em 0.5em 0em;
+}
+.addAccConfirm input {
+  width: 1.5em;
+  height: 1.5em;
+}
+.addAccBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin: 0.55em 0em 0.55em 0em;
+}
+.addAccBtn button {
+  width: 60%;
+  height: 2.35em;
+  border-radius: 20px;
+  border: none;
+  background-color: #4776c3;
+  color: white;
+}
+
+/* #SETTINGSPAGE */
+.settingCont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.settingPartCont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 3px 10px -3px #003566;
+  margin: 0em 0em 1.5em 0em;
+  border-radius: 1em;
+  background-color: white;
+  overflow: auto;
+}
+.settingsName {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 1em 0em 1em 0em;
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: darkgray;
+}
+.settingsMainPart {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 1.25em 0em 1.25em 0em;
+}
+.dobSetting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dobSetting select {
+  width: 40%;
+  border-radius: 6px;
+  box-shadow: 1px 2px 5px 0px darkgrey;
+}
+.dobSetting input {
+  width: 20%;
+}
+.settingImage {
+  aspect-ratio: 1/1;
+  width: 10em;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 9px;
+  border-color: white;
+  margin: 0em 0em 1em 0em;
+  box-shadow: 0px 1px 9px -2px black;
+  background-color: steelblue;
+}
+.settingInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0em 0.5em 0em;
+}
+.nameUpdate {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nameUpdate input {
+  width: 40%;
+}
+#accSettingInputMain {
+  border-radius: 6px;
+  box-shadow: 1px 2px 5px 0px darkgrey;
+}
+.updateAccBtn,
+.deleteAccBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 0.55em 0em 0.55em 0em;
+}
+.updateAccBtn {
+  margin: 1.5em 0em 0.55em 0em;
+}
+#deleteAccButton,
+#updateAccButton {
+  width: 60%;
+  height: 2.35em;
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+#updateAccButton {
+  background-color: #6096ba;
+  color: #e7ecef;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+}
+#deleteAccButton {
+  background-color: #ff4d6d;
+  color: #fff0f3;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+/* #ACCOUNTUPDATE */
+.accUpdatePage {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.accUpdateCont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accUpdateContMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: 0em 0em 1.5em 0em;
+  box-shadow: 1px 1px 2px 0px black;
+  border-radius: 1em;
+  overflow: auto;
+}
+.accUpdateInputName {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 1em 0em 1em 0em;
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: darkgray;
+}
+.accUpdateInputMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25em 0em 1.25em 0em;
+}
+.accUpdateInfo {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0em 0.5em 0em;
+}
+.accUpdateInfo input {
+  border-radius: 6px;
+  box-shadow: 1px 2px 5px 0px darkgrey;
+}
+.accUpdateSecInfo {
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accUpdateSecInfo {
+  margin: 0.25em 0em 0.25em 0em;
+}
+.accUpdateSecInfo label {
+  padding: 0em;
+}
+.updateAccCont,
+.cancelAccUpCont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 0.45em 0em 0.45em 0em;
+}
+.updateAccCont {
+  margin: 1.5em 0em 0.55em 0em;
+}
+.cancelAccUpCont button,
+.updateAccCont button {
+  height: 2.5em;
+  width: 60%;
+  border-radius: 3em;
+  border: none;
+}
+.updateAccCont button {
+  background-color: #6096ba;
+  color: #e7ecef;
+}
+.cancelAccUpCont button {
+  background-color: #ff4d6d;
+  color: #fff0f3;
+}
+
+/* #NAVIGATION */
+.navigation {
+  display: none;
+  flex-direction: row;
+  bottom: 0px;
+  width: 100%;
+  justify-content: space-around;
+  background-color: #778da9;
+  padding: 0.75em 0em 0.75em 0em;
+  position: fixed;
+}
+.navigation div {
+  display: flex;
+  align-items: center;
+}
+.navigation div svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+.mainCont {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
