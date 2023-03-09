@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/accountManager/static/css/main.85ceee0a.css",
+    "main.js": "/accountManager/static/js/main.f4e6b867.js",
+    "index.html": "/accountManager/index.html",
+    "main.85ceee0a.css.map": "/accountManager/static/css/main.85ceee0a.css.map",
+    "main.f4e6b867.js.map": "/accountManager/static/js/main.f4e6b867.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85ceee0a.css",
+    "static/js/main.f4e6b867.js"
+  ]
+}
