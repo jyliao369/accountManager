@@ -69,34 +69,36 @@ function App() {
   };
 
   const checkLogin = () => {
-    Axios.get(`http://localhost:3001/login`, {}).then((response) => {
-      console.log(response);
-      if (response.data.isLoggedIn === "true") {
-        setCurrentUser(response.data.user[0]);
-        setIsLoggedIn(response.data.isLoggedIn);
-        setCurrentPage("#profilePage");
-        $("#profilePage").fadeIn("slow").css("display", "flex");
+    Axios.get(`https://account-manager-database.herokuapp.com/login`, {}).then(
+      (response) => {
+        console.log(response);
+        if (response.data.isLoggedIn === "true") {
+          setCurrentUser(response.data.user[0]);
+          setIsLoggedIn(response.data.isLoggedIn);
+          setCurrentPage("#profilePage");
+          $("#profilePage").fadeIn("slow").css("display", "flex");
 
-        $("#navigation").css({
-          bottom: "-55px",
-          display: "flex",
-        });
+          $("#navigation").css({
+            bottom: "-55px",
+            display: "flex",
+          });
 
-        setTimeout(() => {
-          $("#navigation").animate(
-            {
-              bottom: "-1",
-            },
-            "slow"
-          );
-        });
-      } else {
-        setCurrentUser([]);
-        setIsLoggedIn(response.data.isLoggedIn);
-        setCurrentPage("");
-        $("#logForm").fadeIn(500);
+          setTimeout(() => {
+            $("#navigation").animate(
+              {
+                bottom: "-1",
+              },
+              "slow"
+            );
+          });
+        } else {
+          setCurrentUser([]);
+          setIsLoggedIn(response.data.isLoggedIn);
+          setCurrentPage("");
+          $("#logForm").fadeIn(500);
+        }
       }
-    });
+    );
   };
 
   // const autoLogOut = () => {
